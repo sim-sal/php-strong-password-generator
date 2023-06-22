@@ -11,7 +11,5 @@ function generaStringaRandom($passLength)
     return $stringaRandom;
 }
 
-echo "<h4 class='text-center'>La tua password generata è: </h4>";
-echo "<h3 class='text-center'>";
-echo generaStringaRandom($passLength);
-echo "</h3>";
+session_start();
+$_SESSION['randomPassword'] = generaStringaRandom($passLength);

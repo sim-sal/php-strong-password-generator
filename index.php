@@ -34,6 +34,19 @@
             display: flex;
             justify-content: space-around;
         }
+
+        .my_button {
+            color: white;
+            background-color: blueviolet;
+            border: 1px solid black;
+            border-radius: 5px;
+            padding: 5px;
+        }
+
+        .my_link {
+            color: white;
+            text-decoration: none;
+        }
     </style>
 
 </head>
@@ -52,18 +65,18 @@
 
             <h3></h3>
 
-            <div class="form_container">
+            <div class="form_container text-center">
                 <form class="text-center my-3">
                     <label for="passLength">Lunghezza password:</label>
                     <input type="number" name="passLength" id="passLength" value="<?php echo $_GET['passLength']; ?>">
                 </form>
 
+                <a class="my_link" href="showpassword.php"><button class="my_button">GENERA LA TUA PASSWORD</button></a>
+
                 <?php include "functions.php"; ?>
             </div>
 
-
         </div>
-
 
     </main>
 
