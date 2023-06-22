@@ -52,27 +52,32 @@
                 Genera una password sicura
             </h2>
 
+            <h3></h3>
+
             <div class="form_container">
                 <form class="text-center my-3">
                     <label for="passLength">Lunghezza password:</label>
                     <input type="number" name="passLength" id="passLength" value="<?php echo $_GET['passLength']; ?>">
-
-                    <?php
-                    $passLength = $_GET['passLength'];
-
-                    function generaStringaRandom($passLength)
-                    {
-                        $caratteri = '0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ`!?$?%^&*()_-+={[}]:;@~#|\<,>.?/';
-                        $stringaRandom = '';
-                        for ($i = 0; $i < $passLength; $i++) {
-                            $stringaRandom .= $caratteri[rand(0, strlen($caratteri) - 1)];
-                        }
-                        return $stringaRandom;
-                    }
-
-                    echo generaStringaRandom($passLength);
-                    ?>
                 </form>
+
+                <?php
+                $passLength = $_GET['passLength'];
+
+                function generaStringaRandom($passLength)
+                {
+                    $caratteri = '0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ`!?$?%^&*()_-+={[}]:;@~#|\<,>.?/';
+                    $stringaRandom = '';
+                    for ($i = 0; $i < $passLength; $i++) {
+                        $stringaRandom .= $caratteri[rand(0, strlen($caratteri) - 1)];
+                    }
+                    return $stringaRandom;
+                }
+
+                echo "<h4 class='text-center'>La tua password generata è: </h4>";
+                echo "<h3 class='text-center'>";
+                echo generaStringaRandom($passLength);
+                echo "</h3>";
+                ?>
             </div>
 
         </div>
