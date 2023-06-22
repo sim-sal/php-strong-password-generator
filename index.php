@@ -9,8 +9,6 @@
 
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
 
-    <?php include "functions.php"; ?>
-
     <style>
         main {
             background-color: darkblue;
@@ -60,27 +58,13 @@
                     <input type="number" name="passLength" id="passLength" value="<?php echo $_GET['passLength']; ?>">
                 </form>
 
-                <?php
-                $passLength = $_GET['passLength'];
-
-                function generaStringaRandom($passLength)
-                {
-                    $caratteri = '0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ`!?$?%^&*()_-+={[}]:;@~#|\<,>.?/';
-                    $stringaRandom = '';
-                    for ($i = 0; $i < $passLength; $i++) {
-                        $stringaRandom .= $caratteri[rand(0, strlen($caratteri) - 1)];
-                    }
-                    return $stringaRandom;
-                }
-
-                echo "<h4 class='text-center'>La tua password generata è: </h4>";
-                echo "<h3 class='text-center'>";
-                echo generaStringaRandom($passLength);
-                echo "</h3>";
-                ?>
+                <?php include "functions.php"; ?>
             </div>
 
+
         </div>
+
+
     </main>
 
 
